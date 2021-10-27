@@ -1,0 +1,13 @@
+﻿<WndTap Name="burdeninfo" Text="burdeninfo" Ver="2">
+<var name="refreshAfterEdit" expr="0"/>
+<var name="dataRequired" expr="burden_name,goods_id[goodsinfo_id]"/>
+<var name="dataRequireless" expr=""/>
+<xi:include href="lan\burdeninfo.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBburdeninfo" id="burdeninfo" Text="burdeninfo" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="burdeninfo_GBDEDIT.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="burdeninfo_GBOPE.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="burdeninfo_Vh.xml"/></Ctrls></GroupBox></Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate><SetVisible name="insertburdeninfo" Visible="1"/><SetVisible name="modifyburdeninfo" Visible="0"/></OnActivate>
+</WndTap>

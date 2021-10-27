@@ -1,0 +1,17 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVstorageinfo" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletestorageinfo" Name="deletestorageinfo" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>invoicing.storageinfo</DbTable>
+<Where>storageinfo_id='%{storageinfoLst[storageinfo_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchstorageinfo" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshstorageinfo" Name="searchstorageinfo" Size="50,20">
+			  <OnClick><submit next="storageinfoLst"/>	</OnClick>
+</Button>
+<TAB/><Button Text="firstpage" Name="FPstorageinfoLst" OnClick="(storageinfoLst)GetPage(First)" Size="40,20"/>
+<Button Text="prepage" Name="PREstorageinfoLst" OnClick="(storageinfoLst)GetPage(Pre)" Size="40,20"/>
+<Button Text="nextpage" Name="NPstorageinfoLst" OnClick="(storageinfoLst)GetPage(Next)" Size="40,20"/>
+</Ctrls></GroupBox>

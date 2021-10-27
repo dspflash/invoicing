@@ -1,0 +1,17 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVstockinfo"><Ctrls>
+<ListCtrl Heading="goods_id,120;storage_id,120;num_first,90;sum_money_first,90;num,90;cost_price,90;sum_money,90;stockinfo_id,100;" loadedclick="0" ToolTip="ttp_stockinfo" Name="stockinfoLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>invoicing.stockinfo s left join invoicing.goodsinfo g on s.goods_id=g.goodsinfo_id left join invoicing.storageinfo s0 on s.storage_id=s0.storageinfo_id</DbTable>
+<Index>stockinfo_id</Index>
+<Data>g.GOODS_NAME goods_id,s0.STO_NAME storage_id,s.num_first,s.sum_money_first,s.num,s.cost_price,s.sum_money,s.stockinfo_id</Data>
+<Order>stockinfo_id</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>stockinfo_id='%{stockinfo_vLst[stockinfo_id]}'</Where></DbDetails><submit next="$this.stockinfo.stockinfoLst" namelist="DbDetails"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>invoicing.stockinfo</DbTable>
+<Where>stockinfo_id='%{stockinfo_vLst[stockinfo_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

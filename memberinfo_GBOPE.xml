@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEmemberinfo" Size="100,100"><Ctrls>
+<Button sqlpkinsert="memberinfo_id" Text="create" ToolTip="ttp_creatememberinfo" Name="insertmemberinfo" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>invoicing.memberinfo</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>member_name,member_pym,client_id[clientinfo_id],card_typeid[id],card_no,card_sn,card_password,mobile_phone,other_phone,gender,birthday,farmday,address,post_code,email,qq,car_no,idcard_type,idcard_no,photo,validend_date,state,lastsell_date,total_sellmoney,total_billnum,total_grade,valid_grade,card_money,intro_memberid,note</Data>
+<DataEx>dept_id,busiuser_id,create_userid,create_date;'%{dept_id}','%{user_id}','%{user_id}',now()</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="memberinfoLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifymemberinfo" Name="modifymemberinfo" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>invoicing.memberinfo</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>member_name,member_pym,client_id[clientinfo_id],card_typeid[id],card_no,card_sn,mobile_phone,other_phone,gender,birthday,farmday,address,post_code,email,qq,car_no,idcard_type,idcard_no,photo,validend_date,state,lastsell_date,total_sellmoney,total_billnum,total_grade,valid_grade,card_money,intro_memberid,note</Data>
+<DataEx/>
+<Where>memberinfo_id='%{memberinfo_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="memberinfoLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetmemberinfo" Name="resetmemberinfo" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITmemberinfo" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchmemberinfo" Name="gsearchmemberinfo" Size="50,20" visible="false">
+	<OnClick>
+	<search next="memberinfoLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITmemberinfo" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><XI3uWnd keywords="" debug="0" Title="Invoicing" logo="http://centyou.com/images/logo.png" description="“x+”是一套跨平台、安全、高效并支持应用专属定制的SOA软件应用运行平台">
+	<DbDetails>
+		<SubDriver>MySQL</SubDriver>
+		<Host>localhost</Host>
+		<database>invoicing</database>
+		
+		<characterset>utf8</characterset>
+		<User>i3u</User>
+		<password>i3u</password>
+		
+		
+		</DbDetails>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\general.xml"/>
+	<WndTaps>
+<!--WndTap Name="orderinfo" Text="orderinfo">
+<Language name="orderinfo"><Lang name="orderinfo" value="客户下单"/></Language>
+<Ctrls><GroupBox Name="GBorderinfo" Text="orderinfo" Size="100,100"><Ctrls>
+<TextBox Name="TB_layout" Size="100,20" Text="" tooltip="商品编码"></TextBox>
+<Button Name="Barcode" Size="80,20" Text="扫一扫" OnClick="(TB_layout)barcode"/>
+</Ctrls></GroupBox></Ctrls></WndTap-->
+		<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="clientinfo_V.xml"/>
+		<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="goodsinfo_V.xml"/>
+		<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="orderinfo_V.xml"/>
+		<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="memberinfo_V.xml"/>
+		<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="stockinfo_V.xml"/>
+		<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="storageinfo_V.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="burdeninfo_v.xml"></xi:include>
+	</WndTaps></XI3uWnd>

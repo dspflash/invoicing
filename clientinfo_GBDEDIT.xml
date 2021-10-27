@@ -1,0 +1,251 @@
+﻿<GroupBox Name="GBDEDITclientinfo"><Ctrls>
+<GroupBox feature="tab" Text="Basic" Name="Basic"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_client_name"><Ctrls>
+<Label Align="Right" Text="client_name" Name="lb_client_name" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_client_name" Name="client_name" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_client_pym"><Ctrls>
+<Label Align="Right" Text="client_pym" Name="lb_client_pym" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_client_pym" Name="client_pym" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_client_type"><Ctrls>
+<Label Align="Right" Text="client_type" onload="init" Name="lb_client_type" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_client_type" onload="init" Name="client_type" Size="170,100">
+	<DbDetails>
+<DbTable>invoicing.clienttype</DbTable>
+<Index>child_id</Index>
+<Data>CHILD_NAME,CHILD_ID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_mobilephone"><Ctrls>
+<Label Align="Right" Text="mobilephone" Name="lb_mobilephone" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_mobilephone" Name="mobilephone" Size="150,20"/>
+<MagicCtrl ToolTip="DialToCall" Name="dialmobilephone" OnClick="nis3ucs:%{mobilephone}" images=" ,data/startcall_green.png" button="type:0" Size="20,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_telephone"><Ctrls>
+<Label Align="Right" Text="telephone" Name="lb_telephone" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_telephone" Name="telephone" Size="150,20"/>
+<MagicCtrl ToolTip="DialToCall" Name="dialtelephone" OnClick="nis3ucs:%{telephone}" images=" ,data/startcall_green.png" button="type:0" Size="20,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_fax"><Ctrls>
+<Label Align="Right" Text="fax" Name="lb_fax" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_fax" Name="fax" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_email"><Ctrls>
+<Label Align="Right" Text="email" Name="lb_email" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_email" Name="email" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_homepage"><Ctrls>
+<Label Align="Right" Text="homepage" Name="lb_homepage" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_homepage" Name="homepage" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_address"><Ctrls>
+<Label Align="Right" Text="address" Name="lb_address" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_address" Name="address" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_postcode"><Ctrls>
+<Label Align="Right" Text="postcode" Name="lb_postcode" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_postcode" Name="postcode" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_linkman" Visible="false"><Ctrls>
+<Label Align="Right" Text="linkman" overlap="pre" Name="lb_linkman" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_linkman" overlap="pre" Name="linkman" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_link_date" Visible="false"><Ctrls>
+<Label Align="Right" Text="link_date" overlap="pre" Name="lb_link_date" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_link_date" overlap="pre" Name="link_date" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox feature="tab" Text="Bank" Name="Bank"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_bank"><Ctrls>
+<Label Align="Right" Text="bank" Name="lb_bank" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_bank" Name="bank" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_account_no"><Ctrls>
+<Label Align="Right" Text="account_no" Name="lb_account_no" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_account_no" Name="account_no" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_register_money"><Ctrls>
+<Label Align="Right" Text="register_money" Name="lb_register_money" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_register_money" Name="register_money" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_economy_type"><Ctrls>
+<Label Align="Right" Text="economy_type" Name="lb_economy_type" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_economy_type" Name="economy_type" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_credit_level"><Ctrls>
+<Label Align="Right" Text="credit_level" Name="lb_credit_level" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_credit_level" Name="credit_level" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_note"><Ctrls>
+<Label Align="Right" Text="note" Name="lb_note" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_note" Name="note" Size="170,20"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox feature="tab" Text="Ext" Name="Ext"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_region_id"><Ctrls>
+<Label Align="Right" Text="region_id" onload="init" Name="lb_region_id" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_region_id" onload="init" Name="region_id" Size="170,100">
+	<DbDetails>
+<DbTable>invoicing.regioninfo</DbTable>
+<Index>id</Index>
+<Data>REGIONNAME,ID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_is_valid"><Ctrls>
+<Label Align="Right" Text="is_valid" Name="lb_is_valid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_is_valid" Name="is_valid" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_busiarea"><Ctrls>
+<Label Align="Right" Text="busiarea" Name="lb_busiarea" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_busiarea" Name="busiarea" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_clientmemo"><Ctrls>
+<Label Align="Right" Text="clientmemo" Name="lb_clientmemo" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_clientmemo" Name="clientmemo" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_clientprop"><Ctrls>
+<Label Align="Right" Text="clientprop" Name="lb_clientprop" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_clientprop" Name="clientprop" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_corpscope"><Ctrls>
+<Label Align="Right" Text="corpscope" Name="lb_corpscope" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_corpscope" Name="corpscope" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_workerscope"><Ctrls>
+<Label Align="Right" Text="workerscope" Name="lb_workerscope" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_workerscope" Name="workerscope" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_client_source"><Ctrls>
+<Label Align="Right" Text="client_source" Name="lb_client_source" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_client_source" Name="client_source" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_client_state"><Ctrls>
+<Label Align="Right" Text="client_state" Name="lb_client_state" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_client_state" Name="client_state" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_taxno"><Ctrls>
+<Label Align="Right" Text="taxno" Name="lb_taxno" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_taxno" Name="taxno" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_trade"><Ctrls>
+<Label Align="Right" Text="trade" Name="lb_trade" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_trade" Name="trade" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_worktype"><Ctrls>
+<Label Align="Right" Text="worktype" Name="lb_worktype" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_worktype" Name="worktype" Size="170,20"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox feature="tab" Text="Fin" Name="Fin"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_rec_day"><Ctrls>
+<Label Align="Right" Text="rec_day" Name="lb_rec_day" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_rec_day" Name="rec_day" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_rec_money"><Ctrls>
+<Label Align="Right" Text="rec_money" Name="lb_rec_money" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_rec_money" Name="rec_money" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_rec_money_sum"><Ctrls>
+<Label Align="Right" Text="rec_money_sum" Name="lb_rec_money_sum" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_rec_money_sum" Name="rec_money_sum" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_rec_money_credit"><Ctrls>
+<Label Align="Right" Text="rec_money_credit" Name="lb_rec_money_credit" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_rec_money_credit" Name="rec_money_credit" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_pay_day"><Ctrls>
+<Label Align="Right" Text="pay_day" Name="lb_pay_day" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_pay_day" Name="pay_day" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_pay_money"><Ctrls>
+<Label Align="Right" Text="pay_money" Name="lb_pay_money" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_pay_money" Name="pay_money" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_pay_money_sum"><Ctrls>
+<Label Align="Right" Text="pay_money_sum" Name="lb_pay_money_sum" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_pay_money_sum" Name="pay_money_sum" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_pay_money_credit"><Ctrls>
+<Label Align="Right" Text="pay_money_credit" Name="lb_pay_money_credit" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_pay_money_credit" Name="pay_money_credit" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_price_pre_type"><Ctrls>
+<Label Align="Right" Text="price_pre_type" Name="lb_price_pre_type" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_price_pre_type" Name="price_pre_type" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_agio_pre_type"><Ctrls>
+<Label Align="Right" Text="agio_pre_type" Name="lb_agio_pre_type" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_agio_pre_type" Name="agio_pre_type" Size="170,20"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox feature="tab" Text="tag" Name="tag"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_tag"><Ctrls>
+<Label Align="Right" Text="tag" Name="lb_tag" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_tag" Name="tag" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_country"><Ctrls>
+<Label Align="Right" Text="country" Name="lb_country" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_country" Name="country" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_province"><Ctrls>
+<Label Align="Right" Text="province" Name="lb_province" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_province" Name="province" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_city"><Ctrls>
+<Label Align="Right" Text="city" Name="lb_city" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_city" Name="city" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_district"><Ctrls>
+<Label Align="Right" Text="district" Name="lb_district" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_district" Name="district" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_isright"><Ctrls>
+<Label Align="Right" Text="isright" Name="lb_isright" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_isright" Name="isright" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_agio_dockratio"><Ctrls>
+<Label Align="Right" Text="agio_dockratio" Name="lb_agio_dockratio" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_agio_dockratio" Name="agio_dockratio" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_create_userid" Visible="false"><Ctrls>
+<Label Align="Right" Text="create_userid" overlap="pre" Name="lb_create_userid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_create_userid" overlap="pre" Name="create_userid" readonly="true" Size="170,20" Visible="false">
+	<DbDetails>
+<DbTable>invoicing.userinfo</DbTable>
+<Index>id</Index>
+<Data>USER_NAME,ID</Data>
+<Where/>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_create_date" Visible="false"><Ctrls>
+<Label Align="Right" Text="create_date" overlap="pre" Name="lb_create_date" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_create_date" overlap="pre" Name="create_date" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_clientinfo_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="clientinfo_id" overlap="pre" Name="lb_clientinfo_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_clientinfo_id" overlap="pre" Name="clientinfo_id" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{clientinfo_id}'"><SetVisible name="insertclientinfo" Visible="0"/><SetVisible name="modifyclientinfo" Visible="1"/><else/><SetVisible name="insertclientinfo" Visible="1"/><SetVisible name="modifyclientinfo" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_busiuser_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="busiuser_id" overlap="pre" Name="lb_busiuser_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_busiuser_id" overlap="pre" Name="busiuser_id" readonly="true" Size="170,20" Visible="false">
+	<DbDetails>
+<DbTable>invoicing.userinfo</DbTable>
+<Index>id</Index>
+<Data>USER_NAME,ID</Data>
+<Where/>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_dept_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="dept_id" overlap="pre" Name="lb_dept_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_dept_id" overlap="pre" Name="dept_id" readonly="true" Size="170,20" Visible="false">
+	<DbDetails>
+<DbTable>invoicing.deptinfo</DbTable>
+<Index>id</Index>
+<Data>DEPT_NAME,ID</Data>
+<Where/>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox></Ctrls></GroupBox>

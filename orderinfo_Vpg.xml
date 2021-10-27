@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GBPGorderinfo"><Ctrls>
+<Label Align="Right" Text="Records" Name="lb_Records" Size="60,20"/>
+<TextBox Weight="30" ToolTip="ttp_records" Name="records_orderinfo" Size="30,20" OnLoad="init" readonly="1">
+	<DbDetails fcsm="1">
+<Index>orderinfo_id</Index>
+<DbTable>invoicing.orderinfo o left join invoicing.billtypeinfo b on o.billtype=b.id left join invoicing.clientinfo c on o.client_id=c.clientinfo_id left join invoicing.storageinfo s on o.storage_id=s.storageinfo_id left join invoicing.flowphase f on o.curphasenum=f.phasenum left join invoicing.userinfo u on o.curphaseuserid=u.id left join invoicing.userinfo u0 on o.create_userid=u0.id</DbTable>
+<Data>count(*) records</Data>
+<Order>orderinfo_id</Order><Queryformat>select %{data} from (select orderinfo_id from %{dbtable} %{where} GROUP BY orderinfo_id  ORDER BY orderinfo_id) t</Queryformat></DbDetails>
+<OnEnchange>
+<assign name="pgs_orderinfo" expr="js(Math.ceil(%{records_orderinfo}/%{orderinfo_vLst[countsperpage]}))"/>
+<assign name="pgscb_orderinfo" expr="js('1~'+Math.ceil(%{records_orderinfo}/%{orderinfo_vLst[countsperpage]}))" function="setitems"/>
+</OnEnchange>
+</TextBox>
+<!--ComboBox Weight="60" ToolTip="ttp_pgs" Name="pgscb_orderinfo" Size="60,20"><OnSelEndOK><submit next="orderinfo_vLst" function="GetPage(%{pgscb_orderinfo}-1)"/></OnSelEndOK></ComboBox-->
+<TextBox Weight="30" ToolTip="ttp_pgs" Name="pgs_orderinfo" Size="30,20" readonly="1"/>
+<TextBox Weight="30" ToolTip="ttp_pgcur" Name="pgcur_orderinfo" Size="30,20"/>
+<Button Text="go2Page" Name="go2pageorderinfo_vLst" Size="50,20"><OnClick><submit next="orderinfo_vLst" function="GetPage(%{pgcur_orderinfo}-1)"/></OnClick></Button>
+</Ctrls></GroupBox>

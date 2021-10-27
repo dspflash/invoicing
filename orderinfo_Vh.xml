@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVorderinfo" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="orderinfoLst" ToolTip="ttp_orderinfo" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>orderinfo_id</Index>
+<DbTable>invoicing.orderinfo</DbTable>
+<Data>billtype,order_no,order_date,delivery_date,client_id,storage_id,summary,note,sum_money,derate_money,derate_type,derate_agion,ought_money,pay_account,pay_money,state,curphasenum,curphasedate,curphaseuserid,exestate,finishedate,ispatch,rec_money_sum,pay_money_sum,maxnum,inout_type,baozhengj,create_userid,create_date,orderinfo_id</Data>
+<Order>orderinfo_id</Order></DbDetails>
+<OnClick><assign name="billtype[id]" expr="%{orderinfoLst[billtype]}" function="SetSel"/><assign name="order_no[order_no]" expr="%{orderinfoLst[order_no]}" function="SetSel"/><assign name="client_id[clientinfo_id]" expr="%{orderinfoLst[client_id]}" function="SetSel"/><assign name="storage_id[storageinfo_id]" expr="%{orderinfoLst[storage_id]}" function="SetSel"/><assign name="curphasenum[phasenum]" expr="%{orderinfoLst[curphasenum]}" function="SetSel"/><assign name="curphaseuserid[id]" expr="%{orderinfoLst[curphaseuserid]}" function="SetSel"/><assign name="create_userid[id]" expr="%{orderinfoLst[create_userid]}" function="SetSel"/>
+<if cond="%{orderinfo_id}"><SetVisible name="insertorderinfo" Visible="0"/><SetVisible name="modifyorderinfo" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

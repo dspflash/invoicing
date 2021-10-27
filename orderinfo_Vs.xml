@@ -1,0 +1,169 @@
+﻿<GroupBox Name="GBDEDITorderinfo" toggle="1"><Ctrls>
+<GroupBox Name="Main" Text="Main" feature="tab"><Ctrls>
+<GroupBox Name="GB_billtype" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_billtype" Size="60,20" Text="billtype" Align="Right" onload="init"/>
+<ComboBox Name="billtype" Size="170,100" Text="" Weight="170"  ToolTip="ttp_billtype" onload="init">
+	<DbDetails>
+<Index>id</Index>
+<DbTable>invoicing.billtypeinfo</DbTable>
+<Data>BILL_NAME,CODE_PRE,ID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_order_no" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_order_no" Size="60,20" Text="order_no" Align="Right"/>
+<TextBox Name="order_no" Size="170,20" Text="" Weight="170" ToolTip="ttp_order_no">
+	<DbDetails>
+<Index>order_no</Index>
+<DbTable>invoicing.orderinfo</DbTable>
+<Data>ORDER_NO</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_order_date" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_order_date" Size="60,20" Text="order_date" Align="Right"/>
+<DateTime Name="order_date" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_order_date"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_delivery_date" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_delivery_date" Size="60,20" Text="delivery_date" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<DateTime Name="delivery_date" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_delivery_date" Visible="false" overlap="pre" readonly="true"></DateTime>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_client_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_client_id" Size="60,20" Text="client_id" Align="Right" onload="init"/>
+<ComboBox Name="client_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_client_id" onload="init">
+	<DbDetails>
+<Index>clientinfo_id</Index>
+<DbTable>invoicing.clientinfo</DbTable>
+<Data>CLIENT_NAME,clientinfo_ID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_storage_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_storage_id" Size="60,20" Text="storage_id" Align="Right" onload="init"/>
+<ComboBox Name="storage_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_storage_id" onload="init">
+	<DbDetails>
+<Index>storageinfo_id</Index>
+<DbTable>invoicing.storageinfo</DbTable>
+<Data>STO_NAME,storageinfo_ID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_summary" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_summary" Size="60,20" Text="summary" Align="Right"/>
+<TextBox Name="summary" Size="170,20" Text="" Weight="170" ToolTip="ttp_summary"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_note" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_note" Size="60,20" Text="note" Align="Right"/>
+<TextBox Name="note" Size="170,20" Text="" Weight="170" ToolTip="ttp_note"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox Name="Money" Text="Money" feature="tab"><Ctrls>
+<GroupBox Name="GB_sum_money" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_sum_money" Size="60,20" Text="sum_money" Align="Right"/>
+<TextBox Name="sum_money" Size="170,20" Text="" Weight="170" ToolTip="ttp_sum_money"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_derate_money" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_derate_money" Size="60,20" Text="derate_money" Align="Right"/>
+<TextBox Name="derate_money" Size="170,20" Text="" Weight="170" ToolTip="ttp_derate_money"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_derate_type" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_derate_type" Size="60,20" Text="derate_type" Align="Right"/>
+<TextBox Name="derate_type" Size="170,20" Text="" Weight="170" ToolTip="ttp_derate_type"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_derate_agion" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_derate_agion" Size="60,20" Text="derate_agion" Align="Right"/>
+<TextBox Name="derate_agion" Size="170,20" Text="" Weight="170" ToolTip="ttp_derate_agion"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_ought_money" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_ought_money" Size="60,20" Text="ought_money" Align="Right"/>
+<TextBox Name="ought_money" Size="170,20" Text="" Weight="170" ToolTip="ttp_ought_money"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox Name="Pay" Text="Pay" feature="tab"><Ctrls>
+<GroupBox Name="GB_pay_account" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_pay_account" Size="60,20" Text="pay_account" Align="Right"/>
+<TextBox Name="pay_account" Size="170,20" Text="" Weight="170" ToolTip="ttp_pay_account"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_pay_money" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_pay_money" Size="60,20" Text="pay_money" Align="Right"/>
+<TextBox Name="pay_money" Size="170,20" Text="" Weight="170" ToolTip="ttp_pay_money"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_state" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_state" Size="60,20" Text="state" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="state" Size="170,20" Text="" Weight="170" ToolTip="ttp_state" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_curphasenum" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_curphasenum" Size="60,20" Text="curphasenum" Align="Right" Visible="false" overlap="pre"/>
+<TextBox Name="curphasenum" Size="170,20" Text="" Weight="170" ToolTip="ttp_curphasenum" Visible="false" overlap="pre">
+	<DbDetails>
+<Index>phasenum</Index>
+<DbTable>invoicing.flowphase</DbTable>
+<Data>PHASENAME,PHASENUM</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_curphasedate" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_curphasedate" Size="60,20" Text="curphasedate" Align="Right" Visible="false" overlap="pre"/>
+<DateTime Name="curphasedate" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_curphasedate" Visible="false" overlap="pre"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_curphaseuserid" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_curphaseuserid" Size="60,20" Text="curphaseuserid" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="curphaseuserid" Size="170,20" Text="" Weight="170" ToolTip="ttp_curphaseuserid" Visible="false" overlap="pre" readonly="true">
+	<DbDetails>
+<Index>id</Index>
+<DbTable>invoicing.userinfo</DbTable>
+<Data>USER_NAME,ID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_exestate" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_exestate" Size="60,20" Text="exestate" Align="Right"/>
+<TextBox Name="exestate" Size="170,20" Text="" Weight="170" ToolTip="ttp_exestate"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_finishedate" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_finishedate" Size="60,20" Text="finishedate" Align="Right" Visible="false" overlap="pre"/>
+<DateTime Name="finishedate" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_finishedate" Visible="false" overlap="pre"></DateTime>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_ispatch" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_ispatch" Size="60,20" Text="ispatch" Align="Right"/>
+<TextBox Name="ispatch" Size="170,20" Text="" Weight="170" ToolTip="ttp_ispatch"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_rec_money_sum" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_rec_money_sum" Size="60,20" Text="rec_money_sum" Align="Right"/>
+<TextBox Name="rec_money_sum" Size="170,20" Text="" Weight="170" ToolTip="ttp_rec_money_sum"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_pay_money_sum" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_pay_money_sum" Size="60,20" Text="pay_money_sum" Align="Right"/>
+<TextBox Name="pay_money_sum" Size="170,20" Text="" Weight="170" ToolTip="ttp_pay_money_sum"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_maxnum" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_maxnum" Size="60,20" Text="maxnum" Align="Right"/>
+<TextBox Name="maxnum" Size="170,20" Text="" Weight="170" ToolTip="ttp_maxnum"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_inout_type" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_inout_type" Size="60,20" Text="inout_type" Align="Right"/>
+<TextBox Name="inout_type" Size="170,20" Text="" Weight="170" ToolTip="ttp_inout_type"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_baozhengj" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_baozhengj" Size="60,20" Text="baozhengj" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="baozhengj" Size="170,20" Text="" Weight="170" ToolTip="ttp_baozhengj" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_create_userid" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_create_userid" Size="60,20" Text="create_userid" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="create_userid" Size="170,20" Text="" Weight="170" ToolTip="ttp_create_userid" Visible="false" overlap="pre" readonly="true">
+	<DbDetails>
+<Index>id</Index>
+<DbTable>invoicing.userinfo</DbTable>
+<Data>USER_NAME,ID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_create_date" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_create_date" Size="60,20" Text="create_date" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<DateTime Name="create_date" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_create_date" Visible="false" overlap="pre" readonly="true"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_orderinfo_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_orderinfo_id" Size="60,20" Text="orderinfo_id" Align="Right"/>
+<TextBox Name="orderinfo_id" Size="170,20" Text="" Weight="170" ToolTip="ttp_orderinfo_id"><OnEnChange><if cond="'%{orderinfo_id}'"><DbDetails><Where>orderinfo_id='%{orderinfo_id}'</Where></DbDetails><submit namelist="DbDetails" next="orderdetail_vLst"/><else/><submit function="resetcontent" next="orderdetail_vLst"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox></Ctrls></GroupBox>

@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVmemberinfo" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletememberinfo" Name="deletememberinfo" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>invoicing.memberinfo</DbTable>
+<Where>memberinfo_id='%{memberinfoLst[memberinfo_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmemberinfo" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshmemberinfo" Name="searchmemberinfo" Size="50,20">
+			  <OnClick><submit next="memberinfoLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPmemberinfoLst" OnClick="(memberinfoLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PREmemberinfoLst" OnClick="(memberinfoLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPmemberinfoLst" OnClick="(memberinfoLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

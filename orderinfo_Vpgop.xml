@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm6 md4 lg3" Name="GBOPVorderinfo" Size="100,10"><Ctrls>
+<TAB/><Button Text="initial" ToolTip="ttp_initial" Name="initialorderinfo" Size="50,20">
+<OnClick><submit next="orderinfo_vLst" function="initial"/><submit next="records_orderinfo" function="initial"/></OnClick></Button>
+<TAB/><Button Text="firstpage" Name="FPorderinfo_vLst" Size="50,20">
+<OnClick><submit next="orderinfo_vLst" function="GetPage(first)"/><submit next="records_orderinfo"/></OnClick></Button>
+<Button Text="prepage" Name="PREorderinfo_vLst" Size="50,20">
+<OnClick><submit next="orderinfo_vLst" function="GetPage(Pre)"/></OnClick></Button>
+<Button Text="nextpage" Name="NPorderinfo_vLst" Size="50,20">
+<OnClick><submit next="orderinfo_vLst" function="GetPage(Next)"/></OnClick></Button>
+</Ctrls></GroupBox>

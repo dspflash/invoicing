@@ -1,0 +1,18 @@
+<GroupBox Name="GBDVorderdetail" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="orderdetail_vLst" ToolTip="ttp_orderdetail" Size="700,420" Heading="goods_id,120;storage_id,50;goods_no,500;goods_barcode1,640;goods_name,640;goods_spec,500;unit,500;other_unit,640;num,90;unit_price,90;ref_price,90;sum_money_ref,90;agio,90;agio_price,90;tax_rate,90;tax_price,90;tax_money,90;sum_money,90;receive_num,90;receive_money,90;norecive_num,90;tag,50;note,640;delivery_date,150;unit2,500;num2,90;baseunit,500;basenum,90;ratio,90;is_stop,50;is_largess,50;rel_billid,90;rel_billtype,50;promotion_id,90;ratio2,90;calcunit,500;calcnum,90;exnum1,90;exnum2,90;exnum3,90;exnum4,90;goods_station,640;goods_barcode2,640;days,90;recno,50;client_id,50;client_name,640;is_choose,25;order_num,90;noorder_num,90;orderdetail_id,100;orderinfo_id,100;" loadedclick="0">
+	<DbDetails >
+<DbTable>invoicing.orderdetail o left join invoicing.goodsinfo g on o.goods_id=g.goodsinfo_id</DbTable>
+<Index>orderdetail_id</Index>
+<Data>g.GOODS_NAME goods_id,o.storage_id,o.goods_no,o.goods_barcode1,o.goods_name,o.goods_spec,o.unit,o.other_unit,o.num,o.unit_price,o.ref_price,o.sum_money_ref,o.agio,o.agio_price,o.tax_rate,o.tax_price,o.tax_money,o.sum_money,o.receive_num,o.receive_money,o.norecive_num,o.tag,o.note,o.delivery_date,o.unit2,o.num2,o.baseunit,o.basenum,o.ratio,o.is_stop,o.is_largess,o.rel_billid,o.rel_billtype,o.promotion_id,o.ratio2,o.calcunit,o.calcnum,o.exnum1,o.exnum2,o.exnum3,o.exnum4,o.goods_station,o.goods_barcode2,o.days,o.recno,o.client_id,o.client_name,o.is_choose,o.order_num,o.noorder_num,o.orderdetail_id,o.orderinfo_id</Data>
+<Order>orderdetail_id</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="addone" mustselected="0"><if cond="!%{orderinfo_id}"><alert expr="orderinfo_id is Empty!"/><else/><submit next="$parent.orderdetail.GBDEDITorderdetail" function="reset"/><assign name="$parent.orderdetail.orderinfo_id" expr="%{orderinfo_id}"/></if></op>
+<op text="modify"><DbDetails><Where>orderdetail_id='%{orderdetail_vLst[orderdetail_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$parent.orderdetail.orderdetailLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>invoicing.orderdetail</DbTable>
+<Where>orderdetail_id='%{orderdetail_vLst[orderdetail_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

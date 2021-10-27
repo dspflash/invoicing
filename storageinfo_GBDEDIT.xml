@@ -1,0 +1,44 @@
+<GroupBox Name="GBDEDITstorageinfo"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_sto_name"><Ctrls>
+<Label Align="Right" Text="sto_name" Name="lb_sto_name" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_sto_name" Name="sto_name" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_sto_no"><Ctrls>
+<Label Align="Right" Text="sto_no" Name="lb_sto_no" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_sto_no" Name="sto_no" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_sto_pym"><Ctrls>
+<Label Align="Right" Text="sto_pym" Name="lb_sto_pym" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_sto_pym" Name="sto_pym" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_sto_type"><Ctrls>
+<Label Align="Right" Text="sto_type" Name="lb_sto_type" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_sto_type" Name="sto_type" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_note"><Ctrls>
+<Label Align="Right" Text="note" Name="lb_note" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_note" Name="note" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_tag"><Ctrls>
+<Label Align="Right" Text="tag" Name="lb_tag" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_tag" Name="tag" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_create_date" Visible="false"><Ctrls>
+<Label Align="Right" Text="create_date" overlap="pre" Name="lb_create_date" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_create_date" overlap="pre" Name="create_date" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_create_userid" Visible="false"><Ctrls>
+<Label Align="Right" Text="create_userid" overlap="pre" Name="lb_create_userid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_create_userid" overlap="pre" Name="create_userid" readonly="true" Size="170,20" Visible="false">
+	<DbDetails>
+<DbTable>invoicing.userinfo</DbTable>
+<Index>id</Index>
+<Data>USER_NAME,ID</Data>
+<Where/>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_storageinfo_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="storageinfo_id" overlap="pre" Name="lb_storageinfo_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_storageinfo_id" overlap="pre" Name="storageinfo_id" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{storageinfo_id}'"><SetVisible name="insertstorageinfo" Visible="0"/><SetVisible name="modifystorageinfo" Visible="1"/><else/><SetVisible name="insertstorageinfo" Visible="1"/><SetVisible name="modifystorageinfo" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

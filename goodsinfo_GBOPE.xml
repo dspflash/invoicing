@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEgoodsinfo" Size="100,100"><Ctrls>
+<Button sqlpkinsert="goodsinfo_id" Text="create" ToolTip="ttp_creategoodsinfo" Name="insertgoodsinfo" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>invoicing.goodsinfo</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>goods_no,goods_name,goods_sname,goods_type[child_id],gtype,goods_pym,goods_spec,barcode1,barcode2,goods_station,goods_unit,other_unit,ratio,limit_lnum,limit_hnum,saledept_id,integralrate,dealtype,usebalance,measuretype,costecc,is_valid,is_station,is_sequence,is_batch,is_autobatch,is_validdate,validdate,price_pre1,price_pre2,price_pre3,price_pre4,price_retail,price_member,agio_pre1,agio_pre2,agio_pre3,agio_pre4,price_low,price_in1,price_in2,price_high,price_cost,is_select,tag,note,goods_spec2,is_salewithin,is_colorsize,sizegroup_id,sizelist,sizenamelist,barcodetype,colorlist,goods_unit2,ratio2,is_lease,isright,madein,nosale_days</Data>
+<DataEx>create_date,create_userid;now(),'%{user_id}'</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="goodsinfoLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifygoodsinfo" Name="modifygoodsinfo" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>invoicing.goodsinfo</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>goods_no,goods_name,goods_sname,goods_type[child_id],gtype,goods_pym,goods_spec,barcode1,barcode2,goods_station,goods_unit,other_unit,ratio,limit_lnum,limit_hnum,saledept_id,integralrate,dealtype,usebalance,measuretype,costecc,is_valid,is_station,is_sequence,is_batch,is_autobatch,is_validdate,validdate,price_pre1,price_pre2,price_pre3,price_pre4,price_retail,price_member,agio_pre1,agio_pre2,agio_pre3,agio_pre4,price_low,price_in1,price_in2,price_high,price_cost,is_select,tag,note,goods_spec2,is_salewithin,is_colorsize,sizegroup_id,sizelist,sizenamelist,barcodetype,colorlist,goods_unit2,ratio2,is_lease,isright,madein,nosale_days</Data>
+<DataEx/>
+<Where>goodsinfo_id='%{goodsinfo_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="goodsinfoLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetgoodsinfo" Name="resetgoodsinfo" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITgoodsinfo" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchgoodsinfo" Name="gsearchgoodsinfo" Size="50,20" visible="false">
+	<OnClick>
+	<search next="goodsinfoLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITgoodsinfo" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

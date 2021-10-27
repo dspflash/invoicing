@@ -1,0 +1,38 @@
+﻿<Language name="burdeninfo">
+<Lang name="burdeninfo" value="burdeninfo"/>
+<Lang name="TabEditburdeninfo" value="burdeninfo Edit"/>
+<Lang name="TabViewburdeninfo" value="burdeninfo View"/>
+<Lang name="burden_name" value=""/>
+<Lang name="ttp_burden_name" value=""/>
+<Lang name="goods_id" value=""/>
+<Lang name="ttp_goods_id" value=""/>
+<Lang name="goods_spec" value=""/>
+<Lang name="ttp_goods_spec" value=""/>
+<Lang name="goods_unit" value=""/>
+<Lang name="ttp_goods_unit" value=""/>
+<Lang name="price" value=""/>
+<Lang name="ttp_price" value=""/>
+<Lang name="note" value=""/>
+<Lang name="ttp_note" value=""/>
+<Lang name="create_userid" value=""/>
+<Lang name="ttp_create_userid" value=""/>
+<Lang name="create_date" value=""/>
+<Lang name="ttp_create_date" value=""/>
+<Lang name="burdeninfo_id" value=""/>
+<Lang name="ttp_burdeninfo_id" value=""/>
+<Lang name="ttp_operationburdeninfo" value=""/>
+<Lang name="ttp_createburdeninfo" value=""/>
+<Lang name="ttp_modifyburdeninfo" value=""/>
+<Lang name="ttp_resetburdeninfo" value=""/>
+<Lang name="ttp_deleteburdeninfo" value=""/>
+<Lang name="ttp_refreshburdeninfo" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

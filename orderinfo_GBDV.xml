@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVorderinfo"><Ctrls>
+<ListCtrl Heading="billtype,120;order_no,500;order_date,150;delivery_date,150;client_id,120;storage_id,120;summary,640;note,640;sum_money,90;derate_money,90;derate_type,50;derate_agion,90;ought_money,90;pay_account,640;pay_money,90;state,50;curphasenum,90;curphasedate,150;curphaseuserid,90;exestate,50;finishedate,150;ispatch,50;rec_money_sum,90;pay_money_sum,90;maxnum,90;inout_type,500;baozhengj,90;create_userid,90;create_date,150;orderinfo_id,100;" loadedclick="0" ToolTip="ttp_orderinfo" Name="orderinfoLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>orderinfo_id</Index>
+<DbTable>invoicing.orderinfo o left join invoicing.billtypeinfo b on o.billtype=b.id left join invoicing.clientinfo c on o.client_id=c.clientinfo_id left join invoicing.storageinfo s on o.storage_id=s.storageinfo_id left join invoicing.flowphase f on o.curphasenum=f.phasenum left join invoicing.userinfo u on o.curphaseuserid=u.id left join invoicing.userinfo u0 on o.create_userid=u0.id</DbTable>
+<Data>b.BILL_NAME billtype,o.order_no,o.order_date,o.delivery_date,c.CLIENT_NAME client_id,s.STO_NAME storage_id,o.summary,o.note,o.sum_money,o.derate_money,o.derate_type,o.derate_agion,o.ought_money,o.pay_account,o.pay_money,o.state,f.PHASENAME curphasenum,o.curphasedate,u.USER_NAME curphaseuserid,o.exestate,o.finishedate,o.ispatch,o.rec_money_sum,o.pay_money_sum,o.maxnum,o.inout_type,o.baozhengj,u0.USER_NAME create_userid,o.create_date,o.orderinfo_id</Data>
+<Order>orderinfo_id</Order></DbDetails>
+<DbDetails fcsm="1"><queryFormat xml:base="d:\Program Files (x86)\3UCS\3UCS Server\layout\biztools\mysqlcfg.xml" id="tbpages">select %{data} from %{dbtable} %{where} limit %{StartRow},%{PgSize}</queryFormat></DbDetails><DbDetails fcsm="1"><queryFormat xml:base="d:\Program Files (x86)\3UCS\3UCS Server\layout\biztools\mysqlcfg.xml" id="tbpages">select %{data} from %{dbtable} %{where} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>orderinfo_id='%{orderinfo_vLst[orderinfo_id]}'</Where></DbDetails><submit next="$this.orderinfo.orderinfoLst" namelist="DbDetails"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>invoicing.orderinfo</DbTable>
+<Where>orderinfo_id='%{orderinfo_vLst[orderinfo_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

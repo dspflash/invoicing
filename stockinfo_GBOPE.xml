@@ -1,0 +1,37 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEstockinfo" Size="100,100"><Ctrls>
+<Button sqlpkinsert="stockinfo_id" Text="create" ToolTip="ttp_createstockinfo" Name="insertstockinfo" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>invoicing.stockinfo</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>goods_id[goodsinfo_id],storage_id[storageinfo_id],num_first,sum_money_first,num,cost_price,sum_money</Data>
+<DataEx/>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="stockinfoLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifystockinfo" Name="modifystockinfo" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>invoicing.stockinfo</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>goods_id[goodsinfo_id],storage_id[storageinfo_id],num_first,sum_money_first,num,cost_price,sum_money</Data>
+<DataEx/>
+<Where>stockinfo_id='%{stockinfo_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="stockinfoLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetstockinfo" Name="resetstockinfo" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITstockinfo" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchstockinfo" Name="gsearchstockinfo" Size="50,20" visible="false">
+	<OnClick>
+	<search next="stockinfoLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITstockinfo" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

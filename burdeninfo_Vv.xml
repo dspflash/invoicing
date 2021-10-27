@@ -1,0 +1,17 @@
+﻿<GroupBox Name="GBDVburdeninfo" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="burdeninfo_vLst" ToolTip="ttp_burdeninfo" Size="700,420" OnLoad="init" Heading="burden_name,640;goods_id,120;goods_spec,500;goods_unit,500;price,90;note,640;create_userid,90;create_date,150;burdeninfo_id,100;" loadedclick="0">
+	<DbDetails >
+<DbTable>invoicing.burdeninfo b left join invoicing.goodsinfo g on b.goods_id=g.goodsinfo_id left join invoicing.userinfo u on b.create_userid=u.id</DbTable>
+<Index>burdeninfo_id</Index>
+<Data>b.burden_name,g.GOODS_NAME goods_id,b.goods_spec,b.goods_unit,b.price,b.note,u.USER_NAME create_userid,b.create_date,b.burdeninfo_id</Data>
+<Order>burdeninfo_id</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>burdeninfo_id='%{burdeninfo_vLst[burdeninfo_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.burdeninfo.burdeninfoLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>invoicing.burdeninfo</DbTable>
+<Where>burdeninfo_id='%{burdeninfo_vLst[burdeninfo_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

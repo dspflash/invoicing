@@ -1,0 +1,12 @@
+<GroupBox Name="GBDVstorageinfo" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="storageinfoLst" ToolTip="ttp_storageinfo" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>invoicing.storageinfo</DbTable>
+<Index>storageinfo_id</Index>
+<Data>sto_name,sto_no,sto_pym,sto_type,note,tag,create_date,create_userid,storageinfo_id</Data>
+<Order>storageinfo_id</Order></DbDetails>
+<OnClick><assign name="create_userid[id]" expr="%{storageinfoLst[create_userid]}" function="SetSel"/>
+<if cond="%{storageinfo_id}"><SetVisible name="insertstorageinfo" Visible="0"/><SetVisible name="modifystorageinfo" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

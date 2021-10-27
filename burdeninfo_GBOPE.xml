@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEburdeninfo" Size="100,100"><Ctrls>
+<Button sqlpkinsert="burdeninfo_id" Text="create" ToolTip="ttp_createburdeninfo" Name="insertburdeninfo" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>invoicing.burdeninfo</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>burden_name,goods_id[goodsinfo_id],goods_spec,goods_unit,price,note</Data>
+<DataEx>create_userid,create_date;'%{user_id}',now()</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="burdeninfoLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyburdeninfo" Name="modifyburdeninfo" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>invoicing.burdeninfo</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>burden_name,goods_id[goodsinfo_id],goods_spec,goods_unit,price,note,create_date</Data>
+<DataEx/>
+<Where>burdeninfo_id='%{burdeninfo_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="burdeninfoLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetburdeninfo" Name="resetburdeninfo" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITburdeninfo" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchburdeninfo" Name="gsearchburdeninfo" Size="50,20" visible="false">
+	<OnClick>
+	<search next="burdeninfoLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITburdeninfo" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

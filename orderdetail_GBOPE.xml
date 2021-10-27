@@ -1,0 +1,37 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEorderdetail" Size="100,100"><Ctrls>
+<Button sqlpkinsert="orderdetail_id" Text="create" ToolTip="ttp_createorderdetail" Name="insertorderdetail" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>invoicing.orderdetail</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>goods_id[goodsinfo_id],storage_id,goods_no,goods_barcode1,goods_name,goods_spec,unit,other_unit,num,unit_price,ref_price,sum_money_ref,agio,agio_price,tax_rate,tax_price,tax_money,sum_money,receive_num,receive_money,norecive_num,tag,note,delivery_date,unit2,num2,baseunit,basenum,ratio,is_stop,is_largess,rel_billid,rel_billtype,promotion_id,ratio2,calcunit,calcnum,exnum1,exnum2,exnum3,exnum4,goods_station,goods_barcode2,days,recno,client_id,client_name,is_choose,order_num,noorder_num,orderinfo_id</Data>
+<DataEx/>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="orderdetailLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyorderdetail" Name="modifyorderdetail" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>invoicing.orderdetail</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>goods_id[goodsinfo_id],storage_id,goods_no,goods_barcode1,goods_name,goods_spec,unit,other_unit,num,unit_price,ref_price,sum_money_ref,agio,agio_price,tax_rate,tax_price,tax_money,sum_money,receive_num,receive_money,norecive_num,tag,note,delivery_date,unit2,num2,baseunit,basenum,ratio,is_stop,is_largess,rel_billid,rel_billtype,promotion_id,ratio2,calcunit,calcnum,exnum1,exnum2,exnum3,exnum4,goods_station,goods_barcode2,days,recno,client_id,client_name,is_choose,order_num,noorder_num,orderinfo_id</Data>
+<DataEx/>
+<Where>orderdetail_id='%{orderdetail_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="orderdetailLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetorderdetail" Name="resetorderdetail" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITorderdetail" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchorderdetail" Name="gsearchorderdetail" Size="50,20" visible="false">
+	<OnClick>
+	<search next="orderdetailLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITorderdetail" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

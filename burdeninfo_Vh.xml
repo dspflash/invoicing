@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVburdeninfo" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="burdeninfoLst" ToolTip="ttp_burdeninfo" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>invoicing.burdeninfo</DbTable>
+<Index>burdeninfo_id</Index>
+<Data>burden_name,goods_id,goods_spec,goods_unit,price,note,create_userid,create_date,burdeninfo_id</Data>
+<Order>burdeninfo_id</Order></DbDetails>
+<OnClick><assign name="goods_id[goodsinfo_id]" expr="%{burdeninfoLst[goods_id]}" function="SetSel"/><assign name="create_userid[id]" expr="%{burdeninfoLst[create_userid]}" function="SetSel"/>
+<if cond="%{burdeninfo_id}"><SetVisible name="insertburdeninfo" Visible="0"/><SetVisible name="modifyburdeninfo" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

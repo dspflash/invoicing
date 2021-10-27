@@ -1,0 +1,37 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEstorageinfo" Size="100,100"><Ctrls>
+<Button sqlpkinsert="storageinfo_id" Text="create" ToolTip="ttp_createstorageinfo" Name="insertstorageinfo" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>invoicing.storageinfo</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>sto_name,sto_no,sto_pym,sto_type,note,tag</Data>
+<DataEx>create_date,create_userid;now(),'%{user_id}'</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="storageinfoLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifystorageinfo" Name="modifystorageinfo" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>invoicing.storageinfo</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>sto_name,sto_no,sto_pym,sto_type,note,tag</Data>
+<DataEx/>
+<Where>storageinfo_id='%{storageinfo_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="storageinfoLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetstorageinfo" Name="resetstorageinfo" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITstorageinfo" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchstorageinfo" Name="gsearchstorageinfo" Size="50,20" visible="false">
+	<OnClick>
+	<search next="storageinfoLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITstorageinfo" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

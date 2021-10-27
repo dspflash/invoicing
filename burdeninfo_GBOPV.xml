@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVburdeninfo" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deleteburdeninfo" Name="deleteburdeninfo" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>invoicing.burdeninfo</DbTable>
+<Where>burdeninfo_id='%{burdeninfoLst[burdeninfo_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchburdeninfo" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshburdeninfo" Name="searchburdeninfo" Size="50,20">
+			  <OnClick><submit next="burdeninfoLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPburdeninfoLst" OnClick="(burdeninfoLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PREburdeninfoLst" OnClick="(burdeninfoLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPburdeninfoLst" OnClick="(burdeninfoLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

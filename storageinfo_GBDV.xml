@@ -1,0 +1,17 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVstorageinfo"><Ctrls>
+<ListCtrl Heading="sto_name,640;sto_no,640;sto_pym,640;sto_type,640;note,640;tag,50;create_date,150;create_userid,90;storageinfo_id,100;" loadedclick="0" ToolTip="ttp_storageinfo" Name="storageinfoLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>invoicing.storageinfo s left join invoicing.userinfo u on s.create_userid=u.id</DbTable>
+<Index>storageinfo_id</Index>
+<Data>s.sto_name,s.sto_no,s.sto_pym,s.sto_type,s.note,s.tag,s.create_date,u.USER_NAME create_userid,s.storageinfo_id</Data>
+<Order>storageinfo_id</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>storageinfo_id='%{storageinfo_vLst[storageinfo_id]}'</Where></DbDetails><submit next="$this.storageinfo.storageinfoLst" namelist="DbDetails"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>invoicing.storageinfo</DbTable>
+<Where>storageinfo_id='%{storageinfo_vLst[storageinfo_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

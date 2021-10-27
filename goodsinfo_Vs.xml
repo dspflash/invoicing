@@ -1,0 +1,275 @@
+﻿<GroupBox Name="GBDEDITgoodsinfo"><Ctrls>
+<GroupBox Name="Master" Text="Master" feature="tab"><Ctrls>
+<GroupBox Name="GB_goods_no" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_goods_no" Size="60,20" Text="goods_no" Align="Right"/>
+<TextBox Name="goods_no" Size="170,20" Text="" Weight="170" ToolTip="ttp_goods_no"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_goods_name" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_goods_name" Size="60,20" Text="goods_name" Align="Right"/>
+<TextBox Name="goods_name" Size="170,20" Text="" Weight="170" ToolTip="ttp_goods_name"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_goods_sname" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_goods_sname" Size="60,20" Text="goods_sname" Align="Right"/>
+<TextBox Name="goods_sname" Size="170,20" Text="" Weight="170" ToolTip="ttp_goods_sname"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_goods_type" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_goods_type" Size="60,20" Text="goods_type" Align="Right" onload="init"/>
+<ComboBox Name="goods_type" Size="170,100" Text="" Weight="170"  ToolTip="ttp_goods_type" onload="init">
+	<DbDetails>
+<DbTable>invoicing.goodstype</DbTable>
+<Index>child_id</Index>
+<Data>CHILD_NAME,CHILD_ID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_gtype" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_gtype" Size="60,20" Text="gtype" Align="Right"/>
+<TextBox Name="gtype" Size="170,20" Text="" Weight="170" ToolTip="ttp_gtype"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_goods_pym" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_goods_pym" Size="60,20" Text="goods_pym" Align="Right"/>
+<TextBox Name="goods_pym" Size="170,20" Text="" Weight="170" ToolTip="ttp_goods_pym"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_goods_spec" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_goods_spec" Size="60,20" Text="goods_spec" Align="Right"/>
+<TextBox Name="goods_spec" Size="170,20" Text="" Weight="170" ToolTip="ttp_goods_spec"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_barcode1" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_barcode1" Size="60,20" Text="barcode1" Align="Right"/>
+<TextBox Name="barcode1" Size="170,20" Text="" Weight="170" ToolTip="ttp_barcode1"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_barcode2" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_barcode2" Size="60,20" Text="barcode2" Align="Right"/>
+<TextBox Name="barcode2" Size="170,20" Text="" Weight="170" ToolTip="ttp_barcode2"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_goods_station" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_goods_station" Size="60,20" Text="goods_station" Align="Right"/>
+<TextBox Name="goods_station" Size="170,20" Text="" Weight="170" ToolTip="ttp_goods_station"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox Name="1" Text="1" feature="tab"><Ctrls>
+<GroupBox Name="GB_goods_unit" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_goods_unit" Size="60,20" Text="goods_unit" Align="Right"/>
+<TextBox Name="goods_unit" Size="170,20" Text="" Weight="170" ToolTip="ttp_goods_unit"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_other_unit" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_other_unit" Size="60,20" Text="other_unit" Align="Right"/>
+<TextBox Name="other_unit" Size="170,20" Text="" Weight="170" ToolTip="ttp_other_unit"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_ratio" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_ratio" Size="60,20" Text="ratio" Align="Right"/>
+<TextBox Name="ratio" Size="170,20" Text="" Weight="170" ToolTip="ttp_ratio"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_limit_lnum" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_limit_lnum" Size="60,20" Text="limit_lnum" Align="Right"/>
+<TextBox Name="limit_lnum" Size="170,20" Text="" Weight="170" ToolTip="ttp_limit_lnum"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_limit_hnum" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_limit_hnum" Size="60,20" Text="limit_hnum" Align="Right"/>
+<TextBox Name="limit_hnum" Size="170,20" Text="" Weight="170" ToolTip="ttp_limit_hnum"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_saledept_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_saledept_id" Size="60,20" Text="saledept_id" Align="Right"/>
+<TextBox Name="saledept_id" Size="170,20" Text="" Weight="170" ToolTip="ttp_saledept_id"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_integralrate" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_integralrate" Size="60,20" Text="integralrate" Align="Right"/>
+<TextBox Name="integralrate" Size="170,20" Text="" Weight="170" ToolTip="ttp_integralrate"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_dealtype" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_dealtype" Size="60,20" Text="dealtype" Align="Right"/>
+<TextBox Name="dealtype" Size="170,20" Text="" Weight="170" ToolTip="ttp_dealtype"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_usebalance" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_usebalance" Size="60,20" Text="usebalance" Align="Right"/>
+<TextBox Name="usebalance" Size="170,20" Text="" Weight="170" ToolTip="ttp_usebalance"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_measuretype" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_measuretype" Size="60,20" Text="measuretype" Align="Right"/>
+<TextBox Name="measuretype" Size="170,20" Text="" Weight="170" ToolTip="ttp_measuretype"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_costecc" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_costecc" Size="60,20" Text="costecc" Align="Right"/>
+<TextBox Name="costecc" Size="170,20" Text="" Weight="170" ToolTip="ttp_costecc"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox Name="2" Text="2" feature="tab"><Ctrls>
+<GroupBox Name="GB_is_valid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_is_valid" Size="60,20" Text="is_valid" Align="Right"/>
+<TextBox Name="is_valid" Size="170,20" Text="" Weight="170" ToolTip="ttp_is_valid"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_is_station" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_is_station" Size="60,20" Text="is_station" Align="Right"/>
+<TextBox Name="is_station" Size="170,20" Text="" Weight="170" ToolTip="ttp_is_station"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_is_sequence" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_is_sequence" Size="60,20" Text="is_sequence" Align="Right"/>
+<TextBox Name="is_sequence" Size="170,20" Text="" Weight="170" ToolTip="ttp_is_sequence"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_is_batch" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_is_batch" Size="60,20" Text="is_batch" Align="Right"/>
+<TextBox Name="is_batch" Size="170,20" Text="" Weight="170" ToolTip="ttp_is_batch"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_is_autobatch" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_is_autobatch" Size="60,20" Text="is_autobatch" Align="Right"/>
+<TextBox Name="is_autobatch" Size="170,20" Text="" Weight="170" ToolTip="ttp_is_autobatch"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_is_validdate" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_is_validdate" Size="60,20" Text="is_validdate" Align="Right"/>
+<TextBox Name="is_validdate" Size="170,20" Text="" Weight="170" ToolTip="ttp_is_validdate"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_validdate" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_validdate" Size="60,20" Text="validdate" Align="Right"/>
+<TextBox Name="validdate" Size="170,20" Text="" Weight="170" ToolTip="ttp_validdate"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox Name="price" Text="price" feature="tab"><Ctrls>
+<GroupBox Name="GB_price_pre1" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_price_pre1" Size="60,20" Text="price_pre1" Align="Right"/>
+<TextBox Name="price_pre1" Size="170,20" Text="" Weight="170" ToolTip="ttp_price_pre1"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_price_pre2" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_price_pre2" Size="60,20" Text="price_pre2" Align="Right"/>
+<TextBox Name="price_pre2" Size="170,20" Text="" Weight="170" ToolTip="ttp_price_pre2"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_price_pre3" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_price_pre3" Size="60,20" Text="price_pre3" Align="Right"/>
+<TextBox Name="price_pre3" Size="170,20" Text="" Weight="170" ToolTip="ttp_price_pre3"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_price_pre4" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_price_pre4" Size="60,20" Text="price_pre4" Align="Right"/>
+<TextBox Name="price_pre4" Size="170,20" Text="" Weight="170" ToolTip="ttp_price_pre4"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_price_retail" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_price_retail" Size="60,20" Text="price_retail" Align="Right"/>
+<TextBox Name="price_retail" Size="170,20" Text="" Weight="170" ToolTip="ttp_price_retail"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_price_member" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_price_member" Size="60,20" Text="price_member" Align="Right"/>
+<TextBox Name="price_member" Size="170,20" Text="" Weight="170" ToolTip="ttp_price_member"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_agio_pre1" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_agio_pre1" Size="60,20" Text="agio_pre1" Align="Right"/>
+<TextBox Name="agio_pre1" Size="170,20" Text="" Weight="170" ToolTip="ttp_agio_pre1"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_agio_pre2" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_agio_pre2" Size="60,20" Text="agio_pre2" Align="Right"/>
+<TextBox Name="agio_pre2" Size="170,20" Text="" Weight="170" ToolTip="ttp_agio_pre2"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_agio_pre3" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_agio_pre3" Size="60,20" Text="agio_pre3" Align="Right"/>
+<TextBox Name="agio_pre3" Size="170,20" Text="" Weight="170" ToolTip="ttp_agio_pre3"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_agio_pre4" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_agio_pre4" Size="60,20" Text="agio_pre4" Align="Right"/>
+<TextBox Name="agio_pre4" Size="170,20" Text="" Weight="170" ToolTip="ttp_agio_pre4"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_price_low" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_price_low" Size="60,20" Text="price_low" Align="Right"/>
+<TextBox Name="price_low" Size="170,20" Text="" Weight="170" ToolTip="ttp_price_low"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_price_in1" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_price_in1" Size="60,20" Text="price_in1" Align="Right"/>
+<TextBox Name="price_in1" Size="170,20" Text="" Weight="170" ToolTip="ttp_price_in1"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_price_in2" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_price_in2" Size="60,20" Text="price_in2" Align="Right"/>
+<TextBox Name="price_in2" Size="170,20" Text="" Weight="170" ToolTip="ttp_price_in2"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_price_high" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_price_high" Size="60,20" Text="price_high" Align="Right"/>
+<TextBox Name="price_high" Size="170,20" Text="" Weight="170" ToolTip="ttp_price_high"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_price_cost" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_price_cost" Size="60,20" Text="price_cost" Align="Right"/>
+<TextBox Name="price_cost" Size="170,20" Text="" Weight="170" ToolTip="ttp_price_cost"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox Name="info" Text="info" feature="tab"><Ctrls>
+<GroupBox Name="GB_is_select" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_is_select" Size="60,20" Text="is_select" Align="Right"/>
+<TextBox Name="is_select" Size="170,20" Text="" Weight="170" ToolTip="ttp_is_select"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_tag" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_tag" Size="60,20" Text="tag" Align="Right"/>
+<TextBox Name="tag" Size="170,20" Text="" Weight="170" ToolTip="ttp_tag"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_note" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_note" Size="60,20" Text="note" Align="Right"/>
+<TextBox Name="note" Size="170,20" Text="" Weight="170" ToolTip="ttp_note"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_goods_spec2" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_goods_spec2" Size="60,20" Text="goods_spec2" Align="Right"/>
+<TextBox Name="goods_spec2" Size="170,20" Text="" Weight="170" ToolTip="ttp_goods_spec2"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_is_salewithin" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_is_salewithin" Size="60,20" Text="is_salewithin" Align="Right"/>
+<TextBox Name="is_salewithin" Size="170,20" Text="" Weight="170" ToolTip="ttp_is_salewithin"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_is_colorsize" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_is_colorsize" Size="60,20" Text="is_colorsize" Align="Right"/>
+<TextBox Name="is_colorsize" Size="170,20" Text="" Weight="170" ToolTip="ttp_is_colorsize"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_sizegroup_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_sizegroup_id" Size="60,20" Text="sizegroup_id" Align="Right"/>
+<TextBox Name="sizegroup_id" Size="170,20" Text="" Weight="170" ToolTip="ttp_sizegroup_id"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_sizelist" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_sizelist" Size="60,20" Text="sizelist" Align="Right"/>
+<TextBox Name="sizelist" Size="170,20" Text="" Weight="170" ToolTip="ttp_sizelist"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_sizenamelist" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_sizenamelist" Size="60,20" Text="sizenamelist" Align="Right"/>
+<TextBox Name="sizenamelist" Size="170,20" Text="" Weight="170" ToolTip="ttp_sizenamelist"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_barcodetype" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_barcodetype" Size="60,20" Text="barcodetype" Align="Right"/>
+<TextBox Name="barcodetype" Size="170,20" Text="" Weight="170" ToolTip="ttp_barcodetype"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_colorlist" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_colorlist" Size="60,20" Text="colorlist" Align="Right"/>
+<TextBox Name="colorlist" Size="170,20" Text="" Weight="170" ToolTip="ttp_colorlist"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_goods_unit2" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_goods_unit2" Size="60,20" Text="goods_unit2" Align="Right"/>
+<TextBox Name="goods_unit2" Size="170,20" Text="" Weight="170" ToolTip="ttp_goods_unit2"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_ratio2" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_ratio2" Size="60,20" Text="ratio2" Align="Right"/>
+<TextBox Name="ratio2" Size="170,20" Text="" Weight="170" ToolTip="ttp_ratio2"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_is_lease" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_is_lease" Size="60,20" Text="is_lease" Align="Right"/>
+<TextBox Name="is_lease" Size="170,20" Text="" Weight="170" ToolTip="ttp_is_lease"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isright" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_isright" Size="60,20" Text="isright" Align="Right"/>
+<TextBox Name="isright" Size="170,20" Text="" Weight="170" ToolTip="ttp_isright"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_madein" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_madein" Size="60,20" Text="madein" Align="Right"/>
+<TextBox Name="madein" Size="170,20" Text="" Weight="170" ToolTip="ttp_madein"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_nosale_days" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_nosale_days" Size="60,20" Text="nosale_days" Align="Right"/>
+<TextBox Name="nosale_days" Size="170,20" Text="" Weight="170" ToolTip="ttp_nosale_days"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_create_date" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_create_date" Size="60,20" Text="create_date" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<DateTime Name="create_date" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_create_date" Visible="false" overlap="pre" readonly="true"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_create_userid" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_create_userid" Size="60,20" Text="create_userid" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="create_userid" Size="170,20" Text="" Weight="170" ToolTip="ttp_create_userid" Visible="false" overlap="pre" readonly="true">
+	<DbDetails>
+<DbTable>invoicing.userinfo</DbTable>
+<Index>id</Index>
+<Data>USER_NAME,ID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_goodsinfo_id" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_goodsinfo_id" Size="60,20" Text="goodsinfo_id" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="goodsinfo_id" Size="170,20" Text="" Weight="170" ToolTip="ttp_goodsinfo_id" Visible="false" overlap="pre" readonly="true"><OnEnChange><if cond="'%{goodsinfo_id}'"><SetVisible name="insertgoodsinfo" Visible="0"/><SetVisible name="modifygoodsinfo" Visible="1"/><else/><SetVisible name="insertgoodsinfo" Visible="1"/><SetVisible name="modifygoodsinfo" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox></Ctrls></GroupBox>

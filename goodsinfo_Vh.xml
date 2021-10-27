@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVgoodsinfo" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="goodsinfoLst" ToolTip="ttp_goodsinfo" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>invoicing.goodsinfo</DbTable>
+<Index>goodsinfo_id</Index>
+<Data>goods_no,goods_name,goods_sname,goods_type,gtype,goods_pym,goods_spec,barcode1,barcode2,goods_station,goods_unit,other_unit,ratio,limit_lnum,limit_hnum,saledept_id,integralrate,dealtype,usebalance,measuretype,costecc,is_valid,is_station,is_sequence,is_batch,is_autobatch,is_validdate,validdate,price_pre1,price_pre2,price_pre3,price_pre4,price_retail,price_member,agio_pre1,agio_pre2,agio_pre3,agio_pre4,price_low,price_in1,price_in2,price_high,price_cost,is_select,tag,note,goods_spec2,is_salewithin,is_colorsize,sizegroup_id,sizelist,sizenamelist,barcodetype,colorlist,goods_unit2,ratio2,is_lease,isright,madein,nosale_days,create_date,create_userid,goodsinfo_id</Data>
+<Order>goodsinfo_id</Order></DbDetails>
+<OnClick><assign name="goods_type[child_id]" expr="%{goodsinfoLst[goods_type]}" function="SetSel"/><assign name="create_userid[id]" expr="%{goodsinfoLst[create_userid]}" function="SetSel"/>
+<if cond="%{goodsinfo_id}"><SetVisible name="insertgoodsinfo" Visible="0"/><SetVisible name="modifygoodsinfo" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

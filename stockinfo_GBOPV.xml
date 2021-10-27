@@ -1,0 +1,17 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVstockinfo" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletestockinfo" Name="deletestockinfo" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>invoicing.stockinfo</DbTable>
+<Where>stockinfo_id='%{stockinfoLst[stockinfo_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchstockinfo" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshstockinfo" Name="searchstockinfo" Size="50,20">
+			  <OnClick><submit next="stockinfoLst"/>	</OnClick>
+</Button>
+<TAB/><Button Text="firstpage" Name="FPstockinfoLst" OnClick="(stockinfoLst)GetPage(First)" Size="40,20"/>
+<Button Text="prepage" Name="PREstockinfoLst" OnClick="(stockinfoLst)GetPage(Pre)" Size="40,20"/>
+<Button Text="nextpage" Name="NPstockinfoLst" OnClick="(stockinfoLst)GetPage(Next)" Size="40,20"/>
+</Ctrls></GroupBox>

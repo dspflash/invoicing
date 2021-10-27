@@ -1,0 +1,46 @@
+<GroupBox Name="GBDEDITstockinfo"><Ctrls>
+<GroupBox Name="GB_goods_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_goods_id" Size="60,20" Text="goods_id" Align="Right" onload="init"/>
+<ComboBox Name="goods_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_goods_id" onload="init">
+	<DbDetails>
+<DbTable>invoicing.goodsinfo</DbTable>
+<Index>goodsinfo_id</Index>
+<Data>GOODS_NAME,goodsinfo_ID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_storage_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_storage_id" Size="60,20" Text="storage_id" Align="Right" onload="init"/>
+<ComboBox Name="storage_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_storage_id" onload="init">
+	<DbDetails>
+<DbTable>invoicing.storageinfo</DbTable>
+<Index>storageinfo_id</Index>
+<Data>STO_NAME,storageinfo_ID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_num_first" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_num_first" Size="60,20" Text="num_first" Align="Right"/>
+<TextBox Name="num_first" Size="170,20" Text="" Weight="170" ToolTip="ttp_num_first"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_sum_money_first" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_sum_money_first" Size="60,20" Text="sum_money_first" Align="Right"/>
+<TextBox Name="sum_money_first" Size="170,20" Text="" Weight="170" ToolTip="ttp_sum_money_first"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_num" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_num" Size="60,20" Text="num" Align="Right"/>
+<TextBox Name="num" Size="170,20" Text="" Weight="170" ToolTip="ttp_num"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_cost_price" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_cost_price" Size="60,20" Text="cost_price" Align="Right"/>
+<TextBox Name="cost_price" Size="170,20" Text="" Weight="170" ToolTip="ttp_cost_price"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_sum_money" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_sum_money" Size="60,20" Text="sum_money" Align="Right"/>
+<TextBox Name="sum_money" Size="170,20" Text="" Weight="170" ToolTip="ttp_sum_money"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_stockinfo_id" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_stockinfo_id" Size="60,20" Text="stockinfo_id" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="stockinfo_id" Size="170,20" Text="" Weight="170" ToolTip="ttp_stockinfo_id" Visible="false" overlap="pre" readonly="true"><OnEnChange><if cond="'%{stockinfo_id}'"><SetVisible name="insertstockinfo" Visible="0"/><SetVisible name="modifystockinfo" Visible="1"/><else/><SetVisible name="insertstockinfo" Visible="1"/><SetVisible name="modifystockinfo" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

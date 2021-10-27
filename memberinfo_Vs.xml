@@ -1,0 +1,173 @@
+﻿<GroupBox Name="GBDEDITmemberinfo"><Ctrls>
+<GroupBox Name="Basic" Text="Basic" feature="tab"><Ctrls>
+<GroupBox Name="GB_member_name" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_member_name" Size="60,20" Text="member_name" Align="Right"/>
+<TextBox Name="member_name" Size="170,20" Text="" Weight="170" ToolTip="ttp_member_name"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_member_pym" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_member_pym" Size="60,20" Text="member_pym" Align="Right"/>
+<TextBox Name="member_pym" Size="170,20" Text="" Weight="170" ToolTip="ttp_member_pym"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_client_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_client_id" Size="60,20" Text="client_id" Align="Right" onload="init"/>
+<ComboBox Name="client_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_client_id" onload="init">
+	<DbDetails>
+<DbTable>invoicing.clientinfo</DbTable>
+<Index>clientinfo_id</Index>
+<Data>CLIENT_NAME,clientinfo_ID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_card_typeid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_card_typeid" Size="60,20" Text="card_typeid" Align="Right" onload="init"/>
+<ComboBox Name="card_typeid" Size="170,100" Text="" Weight="170"  ToolTip="ttp_card_typeid" onload="init">
+	<DbDetails>
+<DbTable>invoicing.membercardtype</DbTable>
+<Index>id</Index>
+<Data>CARD_TYPE,ID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_card_no" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_card_no" Size="60,20" Text="card_no" Align="Right"/>
+<TextBox Name="card_no" Size="170,20" Text="" Weight="170" ToolTip="ttp_card_no"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_card_sn" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_card_sn" Size="60,20" Text="card_sn" Align="Right"/>
+<TextBox Name="card_sn" Size="170,20" Text="" Weight="170" ToolTip="ttp_card_sn"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_card_password" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_card_password" Size="60,20" Text="card_password" Align="Right"/>
+<TextBox Name="card_password" Size="170,20" Text="" Weight="170" ToolTip="ttp_card_password"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_mobile_phone" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_mobile_phone" Size="60,20" Text="mobile_phone" Align="Right"/>
+<TextBox Name="mobile_phone" Size="150,20" Text="" Weight="150" ToolTip="ttp_mobile_phone"></TextBox>
+<MagicCtrl Name="dialmobile_phone" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{mobile_phone}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_other_phone" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_other_phone" Size="60,20" Text="other_phone" Align="Right"/>
+<TextBox Name="other_phone" Size="150,20" Text="" Weight="150" ToolTip="ttp_other_phone"></TextBox>
+<MagicCtrl Name="dialother_phone" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{other_phone}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_dept_id" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_dept_id" Size="60,20" Text="dept_id" Align="Right" Visible="false" overlap="pre" readonly="true" onload="init"/>
+<ComboBox Name="dept_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_dept_id" Visible="false" overlap="pre" readonly="true" onload="init">
+	<DbDetails>
+<DbTable>invoicing.deptinfo</DbTable>
+<Index>id</Index>
+<Data>DEPT_NAME,ID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_busiuser_id" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_busiuser_id" Size="60,20" Text="busiuser_id" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="busiuser_id" Size="170,20" Text="" Weight="170" ToolTip="ttp_busiuser_id" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_gender" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_gender" Size="60,20" Text="gender" Align="Right"/>
+<TextBox Name="gender" Size="170,20" Text="" Weight="170" ToolTip="ttp_gender"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox Name="Ext" Text="Ext" feature="tab"><Ctrls>
+<GroupBox Name="GB_birthday" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_birthday" Size="60,20" Text="birthday" Align="Right"/>
+<DateTime Name="birthday" Format="yyyy-MM-dd" Size="170,20" Weight="170"  ToolTip="ttp_birthday"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_farmday" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_farmday" Size="60,20" Text="farmday" Align="Right"/>
+<DateTime Name="farmday" Format="yyyy-MM-dd" Size="170,20" Weight="170"  ToolTip="ttp_farmday"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_address" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_address" Size="60,20" Text="address" Align="Right"/>
+<TextBox Name="address" Size="170,20" Text="" Weight="170" ToolTip="ttp_address"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_post_code" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_post_code" Size="60,20" Text="post_code" Align="Right"/>
+<TextBox Name="post_code" Size="170,20" Text="" Weight="170" ToolTip="ttp_post_code"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_email" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_email" Size="60,20" Text="email" Align="Right"/>
+<TextBox Name="email" Size="170,20" Text="" Weight="170" ToolTip="ttp_email"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_qq" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_qq" Size="60,20" Text="qq" Align="Right"/>
+<TextBox Name="qq" Size="170,20" Text="" Weight="170" ToolTip="ttp_qq"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_car_no" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_car_no" Size="60,20" Text="car_no" Align="Right"/>
+<TextBox Name="car_no" Size="170,20" Text="" Weight="170" ToolTip="ttp_car_no"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_idcard_type" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_idcard_type" Size="60,20" Text="idcard_type" Align="Right"/>
+<TextBox Name="idcard_type" Size="170,20" Text="" Weight="170" ToolTip="ttp_idcard_type"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_idcard_no" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_idcard_no" Size="60,20" Text="idcard_no" Align="Right"/>
+<TextBox Name="idcard_no" Size="170,20" Text="" Weight="170" ToolTip="ttp_idcard_no"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_photo" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_photo" Size="60,20" Text="photo" Align="Right"/>
+<TextBox Name="photo" Size="170,20" Text="" Weight="170" ToolTip="ttp_photo"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox Name="StatusInfo" Text="StatusInfo" feature="tab"><Ctrls>
+<GroupBox Name="GB_validend_date" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_validend_date" Size="60,20" Text="validend_date" Align="Right"/>
+<DateTime Name="validend_date" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_validend_date"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_state" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_state" Size="60,20" Text="state" Align="Right"/>
+<TextBox Name="state" Size="170,20" Text="" Weight="170" ToolTip="ttp_state"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_lastsell_date" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_lastsell_date" Size="60,20" Text="lastsell_date" Align="Right"/>
+<DateTime Name="lastsell_date" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_lastsell_date"></DateTime>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_total_sellmoney" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_total_sellmoney" Size="60,20" Text="total_sellmoney" Align="Right"/>
+<TextBox Name="total_sellmoney" Size="170,20" Text="" Weight="170" ToolTip="ttp_total_sellmoney"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_total_billnum" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_total_billnum" Size="60,20" Text="total_billnum" Align="Right"/>
+<TextBox Name="total_billnum" Size="170,20" Text="" Weight="170" ToolTip="ttp_total_billnum"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_total_grade" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_total_grade" Size="60,20" Text="total_grade" Align="Right"/>
+<TextBox Name="total_grade" Size="170,20" Text="" Weight="170" ToolTip="ttp_total_grade"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_valid_grade" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_valid_grade" Size="60,20" Text="valid_grade" Align="Right"/>
+<TextBox Name="valid_grade" Size="170,20" Text="" Weight="170" ToolTip="ttp_valid_grade"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_card_money" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_card_money" Size="60,20" Text="card_money" Align="Right"/>
+<TextBox Name="card_money" Size="170,20" Text="" Weight="170" ToolTip="ttp_card_money"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_intro_memberid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_intro_memberid" Size="60,20" Text="intro_memberid" Align="Right"/>
+<TextBox Name="intro_memberid" Size="170,20" Text="" Weight="170" ToolTip="ttp_intro_memberid"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_note" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_note" Size="60,20" Text="note" Align="Right"/>
+<TextBox Name="note" Size="170,20" Text="" Weight="170" ToolTip="ttp_note"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_create_userid" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_create_userid" Size="60,20" Text="create_userid" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="create_userid" Size="170,20" Text="" Weight="170" ToolTip="ttp_create_userid" Visible="false" overlap="pre" readonly="true">
+	<DbDetails>
+<DbTable>invoicing.userinfo</DbTable>
+<Index>id</Index>
+<Data>USER_NAME,ID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_create_date" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_create_date" Size="60,20" Text="create_date" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<DateTime Name="create_date" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_create_date" Visible="false" overlap="pre" readonly="true"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_memberinfo_id" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_memberinfo_id" Size="60,20" Text="memberinfo_id" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="memberinfo_id" Size="170,20" Text="" Weight="170" ToolTip="ttp_memberinfo_id" Visible="false" overlap="pre" readonly="true"><OnEnChange><if cond="'%{memberinfo_id}'"><SetVisible name="insertmemberinfo" Visible="0"/><SetVisible name="modifymemberinfo" Visible="1"/><else/><SetVisible name="insertmemberinfo" Visible="1"/><SetVisible name="modifymemberinfo" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox></Ctrls></GroupBox>

@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVmemberinfo" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="memberinfoLst" ToolTip="ttp_memberinfo" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>invoicing.memberinfo</DbTable>
+<Index>memberinfo_id</Index>
+<Data>member_name,member_pym,client_id,card_typeid,card_no,card_sn,mobile_phone,other_phone,dept_id,busiuser_id,gender,birthday,farmday,address,post_code,email,qq,car_no,idcard_type,idcard_no,photo,validend_date,state,lastsell_date,total_sellmoney,total_billnum,total_grade,valid_grade,card_money,intro_memberid,note,create_userid,create_date,memberinfo_id</Data>
+<Order>memberinfo_id</Order></DbDetails>
+<OnClick><assign name="client_id[clientinfo_id]" expr="%{memberinfoLst[client_id]}" function="SetSel"/><assign name="card_typeid[id]" expr="%{memberinfoLst[card_typeid]}" function="SetSel"/><assign name="dept_id[id]" expr="%{memberinfoLst[dept_id]}" function="SetSel"/><assign name="create_userid[id]" expr="%{memberinfoLst[create_userid]}" function="SetSel"/>
+<if cond="%{memberinfo_id}"><SetVisible name="insertmemberinfo" Visible="0"/><SetVisible name="modifymemberinfo" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

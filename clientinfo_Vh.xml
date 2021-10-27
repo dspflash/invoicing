@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVclientinfo" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="clientinfoLst" ToolTip="ttp_clientinfo" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>invoicing.clientinfo</DbTable>
+<Index>clientinfo_id</Index>
+<Data>client_name,client_pym,client_type,mobilephone,telephone,fax,email,homepage,address,postcode,linkman,link_date,bank,account_no,register_money,economy_type,credit_level,note,region_id,is_valid,busiarea,clientmemo,clientprop,corpscope,workerscope,client_source,client_state,taxno,trade,worktype,rec_day,rec_money,rec_money_sum,rec_money_credit,pay_day,pay_money,pay_money_sum,pay_money_credit,price_pre_type,agio_pre_type,tag,country,province,city,district,isright,agio_dockratio,create_userid,create_date,clientinfo_id,busiuser_id,dept_id</Data>
+<Order>clientinfo_id</Order></DbDetails>
+<OnClick><assign name="client_type[child_id]" expr="%{clientinfoLst[client_type]}" function="SetSel"/><assign name="region_id[id]" expr="%{clientinfoLst[region_id]}" function="SetSel"/><assign name="create_userid[id]" expr="%{clientinfoLst[create_userid]}" function="SetSel"/><assign name="busiuser_id[id]" expr="%{clientinfoLst[busiuser_id]}" function="SetSel"/><assign name="dept_id[id]" expr="%{clientinfoLst[dept_id]}" function="SetSel"/>
+<if cond="%{clientinfo_id}"><SetVisible name="insertclientinfo" Visible="0"/><SetVisible name="modifyclientinfo" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

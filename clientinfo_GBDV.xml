@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVclientinfo"><Ctrls>
+<ListCtrl Heading="client_name,640;client_pym,640;client_type,120;mobilephone,640;telephone,640;fax,500;email,500;homepage,640;address,640;postcode,500;linkman,640;link_date,150;bank,640;account_no,500;register_money,500;economy_type,500;credit_level,500;note,640;region_id,120;is_valid,25;busiarea,640;clientmemo,640;clientprop,500;corpscope,640;workerscope,640;client_source,640;client_state,640;taxno,500;trade,640;worktype,640;rec_day,50;rec_money,90;rec_money_sum,90;rec_money_credit,90;pay_day,50;pay_money,90;pay_money_sum,90;pay_money_credit,90;price_pre_type,300;agio_pre_type,300;tag,50;country,50;province,50;city,50;district,50;isright,25;agio_dockratio,90;create_userid,90;create_date,150;clientinfo_id,100;busiuser_id,90;dept_id,90;" loadedclick="0" ToolTip="ttp_clientinfo" Name="clientinfoLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>invoicing.clientinfo c left join invoicing.clienttype c0 on c.client_type=c0.child_id left join invoicing.regioninfo r on c.region_id=r.id left join invoicing.userinfo u on c.create_userid=u.id left join invoicing.userinfo u0 on c.busiuser_id=u0.id left join invoicing.deptinfo d on c.dept_id=d.id</DbTable>
+<Index>clientinfo_id</Index>
+<Data>c.client_name,c.client_pym,c0.CHILD_NAME client_type,c.mobilephone,c.telephone,c.fax,c.email,c.homepage,c.address,c.postcode,c.linkman,c.link_date,c.bank,c.account_no,c.register_money,c.economy_type,c.credit_level,c.note,r.REGIONNAME region_id,c.is_valid,c.busiarea,c.clientmemo,c.clientprop,c.corpscope,c.workerscope,c.client_source,c.client_state,c.taxno,c.trade,c.worktype,c.rec_day,c.rec_money,c.rec_money_sum,c.rec_money_credit,c.pay_day,c.pay_money,c.pay_money_sum,c.pay_money_credit,c.price_pre_type,c.agio_pre_type,c.tag,c.country,c.province,c.city,c.district,c.isright,c.agio_dockratio,u.USER_NAME create_userid,c.create_date,c.clientinfo_id,u0.USER_NAME busiuser_id,d.DEPT_NAME dept_id</Data>
+<Order>clientinfo_id</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>clientinfo_id='%{clientinfo_vLst[clientinfo_id]}'</Where></DbDetails><submit next="$this.clientinfo.clientinfoLst" namelist="DbDetails"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>invoicing.clientinfo</DbTable>
+<Where>clientinfo_id='%{clientinfo_vLst[clientinfo_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

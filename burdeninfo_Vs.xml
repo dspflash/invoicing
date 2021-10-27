@@ -1,0 +1,50 @@
+﻿<GroupBox Name="GBDEDITburdeninfo"><Ctrls>
+<GroupBox Name="GB_burden_name" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_burden_name" Size="60,20" Text="burden_name" Align="Right"/>
+<TextBox Name="burden_name" Size="170,20" Text="" Weight="170" ToolTip="ttp_burden_name"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_goods_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_goods_id" Size="60,20" Text="goods_id" Align="Right" onload="init"/>
+<ComboBox Name="goods_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_goods_id" onload="init">
+	<DbDetails>
+<DbTable>invoicing.goodsinfo</DbTable>
+<Index>goodsinfo_id</Index>
+<Data>GOODS_NAME,GOODS_UNIT,PRICE_PRE1,goodsinfo_ID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_goods_spec" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_goods_spec" Size="60,20" Text="goods_spec" Align="Right"/>
+<TextBox Name="goods_spec" Size="170,20" Text="" Weight="170" ToolTip="ttp_goods_spec"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_goods_unit" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_goods_unit" Size="60,20" Text="goods_unit" Align="Right"/>
+<TextBox Name="goods_unit" Size="170,20" Text="" Weight="170" ToolTip="ttp_goods_unit"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_price" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_price" Size="60,20" Text="price" Align="Right"/>
+<TextBox Name="price" Size="170,20" Text="" Weight="170" ToolTip="ttp_price"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_note" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_note" Size="60,20" Text="note" Align="Right"/>
+<TextBox Name="note" Size="170,20" Text="" Weight="170" ToolTip="ttp_note"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_create_userid" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_create_userid" Size="60,20" Text="create_userid" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="create_userid" Size="170,20" Text="" Weight="170" ToolTip="ttp_create_userid" Visible="false" overlap="pre" readonly="true">
+	<DbDetails>
+<DbTable>invoicing.userinfo</DbTable>
+<Index>id</Index>
+<Data>USER_NAME,ID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_create_date" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_create_date" Size="60,20" Text="create_date" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<DateTime Name="create_date" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_create_date" Visible="false" overlap="pre" readonly="true"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_burdeninfo_id" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_burdeninfo_id" Size="60,20" Text="burdeninfo_id" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="burdeninfo_id" Size="170,20" Text="" Weight="170" ToolTip="ttp_burdeninfo_id" Visible="false" overlap="pre" readonly="true"><OnEnChange><if cond="'%{burdeninfo_id}'"><SetVisible name="insertburdeninfo" Visible="0"/><SetVisible name="modifyburdeninfo" Visible="1"/><else/><SetVisible name="insertburdeninfo" Visible="1"/><SetVisible name="modifyburdeninfo" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

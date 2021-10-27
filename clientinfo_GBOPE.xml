@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEclientinfo" Size="100,100"><Ctrls>
+<Button sqlpkinsert="clientinfo_id" Text="create" ToolTip="ttp_createclientinfo" Name="insertclientinfo" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>invoicing.clientinfo</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>client_name,client_pym,client_type[child_id],mobilephone,telephone,fax,email,homepage,address,postcode,bank,account_no,register_money,economy_type,credit_level,note,region_id[id],is_valid,busiarea,clientmemo,clientprop,corpscope,workerscope,client_source,client_state,taxno,trade,worktype,rec_day,rec_money,rec_money_sum,rec_money_credit,pay_day,pay_money,pay_money_sum,pay_money_credit,price_pre_type,agio_pre_type,tag,country,province,city,district,isright,agio_dockratio</Data>
+<DataEx>create_userid,create_date,busiuser_id,dept_id;'%{user_id}',now(),'%{user_id}','%{dept_id}'</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="clientinfoLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyclientinfo" Name="modifyclientinfo" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>invoicing.clientinfo</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>client_name,client_pym,client_type[child_id],mobilephone,telephone,fax,email,homepage,address,postcode,bank,account_no,register_money,economy_type,credit_level,note,region_id[id],is_valid,busiarea,clientmemo,clientprop,corpscope,workerscope,client_source,client_state,taxno,trade,worktype,rec_day,rec_money,rec_money_sum,rec_money_credit,pay_day,pay_money,pay_money_sum,pay_money_credit,price_pre_type,agio_pre_type,tag,country,province,city,district,isright,agio_dockratio</Data>
+<DataEx/>
+<Where>clientinfo_id='%{clientinfo_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="clientinfoLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetclientinfo" Name="resetclientinfo" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITclientinfo" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchclientinfo" Name="gsearchclientinfo" Size="50,20" visible="false">
+	<OnClick>
+	<search next="clientinfoLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITclientinfo" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

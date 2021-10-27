@@ -1,0 +1,14 @@
+<WndTap Name="orderinfo_v" Text="orderinfo">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="orderinfo_Vem.xml" popup="1"/>
+</WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\orderinfo.xml"/>
+<Ctrls><GroupBox  Name="GBorderinfo" id="orderinfo" Text="orderinfo" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="orderinfo_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVorderinfo" Size="100,20" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.orderinfo.GBDEDITorderinfo" function="reset"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetorderinfo" Name="resetorderinfo" Size="50,20">	<OnClick>	<submit next="GBDEDITorderinfo" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="gsearch" ToolTip="ttp_gsearchorderinfo" Name="gsearchorderinfo" Size="50,20" visible="true">	<OnClick>	<search next="orderinfo_vLst" listed="0" prefixwhere="0" inputed="1"></search><submit next="GBDEDITorderinfo" namelist="search" function="search"/>	</OnClick>	</Button><TAB/></Ctrls></GroupBox>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="orderinfo_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

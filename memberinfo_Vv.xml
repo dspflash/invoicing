@@ -1,0 +1,17 @@
+﻿<GroupBox Name="GBDVmemberinfo" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="memberinfo_vLst" ToolTip="ttp_memberinfo" Size="700,420" OnLoad="init" Heading="member_name,640;member_pym,640;client_id,120;card_typeid,120;card_no,640;card_sn,640;mobile_phone,500;other_phone,500;dept_id,120;busiuser_id,90;gender,20;birthday,90;farmday,90;address,640;post_code,60;email,600;qq,200;car_no,200;idcard_type,500;idcard_no,500;photo,20;validend_date,150;state,25;lastsell_date,150;total_sellmoney,90;total_billnum,90;total_grade,90;valid_grade,90;card_money,90;intro_memberid,90;note,640;create_userid,90;create_date,150;memberinfo_id,100;" loadedclick="0">
+	<DbDetails >
+<DbTable>invoicing.memberinfo m left join invoicing.clientinfo c on m.client_id=c.clientinfo_id left join invoicing.membercardtype m0 on m.card_typeid=m0.id left join invoicing.deptinfo d on m.dept_id=d.id left join invoicing.userinfo u on m.create_userid=u.id</DbTable>
+<Index>memberinfo_id</Index>
+<Data>m.member_name,m.member_pym,c.CLIENT_NAME client_id,m0.CARD_TYPE card_typeid,m.card_no,m.card_sn,m.mobile_phone,m.other_phone,d.DEPT_NAME dept_id,m.busiuser_id,m.gender,m.birthday,m.farmday,m.address,m.post_code,m.email,m.qq,m.car_no,m.idcard_type,m.idcard_no,m.photo,m.validend_date,m.state,m.lastsell_date,m.total_sellmoney,m.total_billnum,m.total_grade,m.valid_grade,m.card_money,m.intro_memberid,m.note,u.USER_NAME create_userid,m.create_date,m.memberinfo_id</Data>
+<Order>memberinfo_id</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>memberinfo_id='%{memberinfo_vLst[memberinfo_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.memberinfo.memberinfoLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>invoicing.memberinfo</DbTable>
+<Where>memberinfo_id='%{memberinfo_vLst[memberinfo_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

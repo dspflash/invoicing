@@ -1,0 +1,17 @@
+﻿<GroupBox Name="GBDVgoodsinfo" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="goodsinfo_vLst" ToolTip="ttp_goodsinfo" Size="700,420" OnLoad="init" Heading="goods_no,640;goods_name,250;goods_sname,250;goods_type,120;gtype,50;goods_pym,640;goods_spec,640;barcode1,640;barcode2,640;goods_station,640;goods_unit,640;other_unit,640;ratio,90;limit_lnum,90;limit_hnum,90;saledept_id,50;integralrate,90;dealtype,50;usebalance,50;measuretype,50;costecc,50;is_valid,25;is_station,25;is_sequence,25;is_batch,25;is_autobatch,25;is_validdate,25;validdate,90;price_pre1,90;price_pre2,90;price_pre3,90;price_pre4,90;price_retail,90;price_member,90;agio_pre1,90;agio_pre2,90;agio_pre3,90;agio_pre4,90;price_low,90;price_in1,90;price_in2,90;price_high,90;price_cost,90;is_select,50;tag,50;note,640;goods_spec2,640;is_salewithin,50;is_colorsize,50;sizegroup_id,90;sizelist,640;sizenamelist,640;barcodetype,50;colorlist,640;goods_unit2,640;ratio2,90;is_lease,25;isright,25;madein,640;nosale_days,50;create_date,150;create_userid,90;goodsinfo_id,100;" loadedclick="0">
+	<DbDetails >
+<DbTable>invoicing.goodsinfo g left join invoicing.goodstype g0 on g.goods_type=g0.child_id left join invoicing.userinfo u on g.create_userid=u.id</DbTable>
+<Index>goodsinfo_id</Index>
+<Data>g.goods_no,g.goods_name,g.goods_sname,g0.CHILD_NAME goods_type,g.gtype,g.goods_pym,g.goods_spec,g.barcode1,g.barcode2,g.goods_station,g.goods_unit,g.other_unit,g.ratio,g.limit_lnum,g.limit_hnum,g.saledept_id,g.integralrate,g.dealtype,g.usebalance,g.measuretype,g.costecc,g.is_valid,g.is_station,g.is_sequence,g.is_batch,g.is_autobatch,g.is_validdate,g.validdate,g.price_pre1,g.price_pre2,g.price_pre3,g.price_pre4,g.price_retail,g.price_member,g.agio_pre1,g.agio_pre2,g.agio_pre3,g.agio_pre4,g.price_low,g.price_in1,g.price_in2,g.price_high,g.price_cost,g.is_select,g.tag,g.note,g.goods_spec2,g.is_salewithin,g.is_colorsize,g.sizegroup_id,g.sizelist,g.sizenamelist,g.barcodetype,g.colorlist,g.goods_unit2,g.ratio2,g.is_lease,g.isright,g.madein,g.nosale_days,g.create_date,u.USER_NAME create_userid,g.goodsinfo_id</Data>
+<Order>goodsinfo_id</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>goodsinfo_id='%{goodsinfo_vLst[goodsinfo_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.goodsinfo.goodsinfoLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>invoicing.goodsinfo</DbTable>
+<Where>goodsinfo_id='%{goodsinfo_vLst[goodsinfo_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>
